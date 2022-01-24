@@ -15,6 +15,8 @@ class CreateCanalsTable extends Migration
     {
         Schema::create('canals', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('number');
             $table->timestamps();
         });
     }
