@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CanalSeeder extends Seeder
 {
@@ -14,5 +15,12 @@ class CanalSeeder extends Seeder
     public function run()
     {
         //
+        $arrayName = array('Facebook', 'Instagram', 'LinkedIn');
+        foreach ($arrayName as $name) {
+            DB::table('canals')->insert([
+                'name' => $name,
+                'number' => rand(1, 8)
+            ]);
+        }
     }
 }
