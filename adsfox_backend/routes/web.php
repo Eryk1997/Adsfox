@@ -20,3 +20,6 @@ Route::get('/', function () {
 
 Route::get('/canals', [CanalController::class, 'index']);
 Route::post('/canals', [CanalController::class, 'store']);
+Route::get('canals/{id}', [CanalController::class, 'show']);
+Route::put('canals/{id}', [CanalController::class, 'update']);
+Route::delete('canals/{id}', [CanalController::class, 'destroy']);
