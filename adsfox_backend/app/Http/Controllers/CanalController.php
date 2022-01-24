@@ -25,7 +25,7 @@ class CanalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): void
     {
         //
     }
@@ -46,11 +46,20 @@ class CanalController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|object
      */
     public function show($id)
     {
-        //
+        // return informations about 1 canal
+        //find canal in the database
+        $canal = Canal::whereId($id)->get();
+
+        // if not found return error
+        if ($canal->isEmpty()) {
+            return response()->json(['errors' => ['message' => 'Not found Canal with id: ' . $id]])->setStatusCode(500);
+        }
+
+        return $canal;
     }
 
     /**
@@ -59,7 +68,7 @@ class CanalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id): void
     {
         //
     }
@@ -69,7 +78,7 @@ class CanalController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|object
      */
     public function update(CanalPutRequest $request, $id)
     {
