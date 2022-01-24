@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/canals', [CanalController::class, 'index']);
+Route::post('/canals', [CanalController::class, 'store']);
