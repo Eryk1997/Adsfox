@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Canal;
 use Illuminate\Http\Request;
 
 class CanalController extends Controller
@@ -13,7 +14,8 @@ class CanalController extends Controller
      */
     public function index()
     {
-        //
+        // the method return all canals in the database
+        return Canal::all();
     }
 
     /**
