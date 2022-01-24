@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/canals/percentages', [CanalController::class, 'percentage']);
+
 Route::get('/canals', [CanalController::class, 'index']);
 Route::post('/canals', [CanalController::class, 'store']);
 Route::get('canals/{id}', [CanalController::class, 'show']);
