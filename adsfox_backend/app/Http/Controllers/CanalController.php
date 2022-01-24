@@ -36,7 +36,8 @@ class CanalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // create new canals, get request and push to the databaase
+        return Canal::create($request->all());
     }
 
     /**
