@@ -1,15 +1,21 @@
-# How to config database MySql
+# 1. How to config database MySql
 * create a database named: adsfox_db
 * set DB_USERNAME and DB_PASSWORD for access to your database
 
-# How to migrate
+# 2. How to migrate
 * open a new terminal window
 * paste the presented fragment: php artisan migrate
 
-# How to add 3 elements to database
+# 3. How to add 3 elements to database
 * open a new terminal window
 * paste the presented fragment: php artisan db:seed --class=CanalSeeder
 
-# How to run server
+# 4. How to run server
 * open a new terminal window
 * paste the presented fragment: php artisan serve
+
+# 5. Api info
+* List of canals:
+  * GET http://127.0.0.1:8000/canals
+* A single canal:
+  * GET http://127.0.0.1:8000/canals/1
