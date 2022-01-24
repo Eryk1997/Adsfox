@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CanalPostRequest;
 use App\Http\Requests\CanalPutRequest;
 use App\Models\Canal;
-use Illuminate\Http\Request;
 
 class CanalController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Canal[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -23,7 +21,6 @@ class CanalController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create(): void
     {
@@ -33,7 +30,7 @@ class CanalController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CanalPostRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(CanalPostRequest $request)
@@ -98,10 +95,14 @@ class CanalController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|int|object
      */
     public function destroy($id)
     {
         //
+        if (!Canal::find($id)) {
+            return response()->json(['errors' => ['message' => 'Not found Canal with id: ' . $id]])->setStatusCode(500);
+        }
+        return Canal::destroy($id);
     }
 }
