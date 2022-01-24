@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CanalPostRequest;
+use App\Http\Requests\CanalPutRequest;
 use App\Models\Canal;
 use Illuminate\Http\Request;
 
@@ -70,9 +71,18 @@ class CanalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CanalPutRequest $request, $id)
     {
-        //
+        // update the canal
+        // find canal in the databse
+        $canal = Canal::find($id);
+
+        // if not found canal return error message
+        if (!$canal) {
+            return response()->json(['errors' => ['message' => 'Not found Canal with id: ' . $id]])->setStatusCode(500);
+        }
+
+        return $canal->update($request->all());
     }
 
     /**
