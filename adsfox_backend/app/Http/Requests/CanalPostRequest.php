@@ -24,7 +24,7 @@ class CanalPostRequest extends FormRequest
     public function rules()
     {
         return [
-            // add validations to request 
+            // add validations to request
             'name'=>'required|unique:canals|between:2,100',
             'number'=>'required|numeric|min:1'
         ];
