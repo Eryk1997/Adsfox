@@ -105,4 +105,23 @@ class CanalController extends Controller
         }
         return Canal::destroy($id);
     }
+
+    public function percentage()
+    {
+        // find all canals, empty array and sum from columns of name number
+        $canals = Canal::all();
+        $newCanalsInfo = array();
+        $sumOfAllChannels = Canal::sum('number');
+
+        //create foreach and push to empty array new values about canals
+
+        foreach ($canals as $canal) {
+            $newCanalsInfo[] = [
+                'id' => $canal->id,
+                'value' => round(($canal->number / $sumOfAllChannels) * 100, 2)
+            ];
+        }
+
+        return $newCanalsInfo;
+    }
 }
