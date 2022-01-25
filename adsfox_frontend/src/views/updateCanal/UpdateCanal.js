@@ -1,62 +1,53 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import CanalService from "../../services/CanalService";
 
-import { GlobalContext } from "../../context/GlobalState";
 import { Link, useParams } from "react-router-dom";
 
 const UpdateCanal = () => {
   const { id } = useParams();
   const [canal, setCanal] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(async () => {
     const result = await CanalService.get(id);
     setCanal(result.data);
   }, []);
 
-  const initalState = {
-    name: "",
-    number: 0,
-  };
-
-  const [submitted, setSubmitted] = useState(false);
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setCanal({ ...canal, [name]: value });
   };
 
-  const saveCanal = () => {
+  const saveCanal = async () => {
     let data = {
       name: canal.name,
       number: canal.number,
     };
 
-    CanalService.update(id, data)
-      .then((response) => {
-        setCanal({
-          id: response.data.id,
-          name: response.data.name,
-          number: response.data.number,
-        });
-        setSubmitted(true);
-        console.log(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
+    try {
+      const result = await CanalService.update(id, data);
+      setCanal({
+        id: result.data.id,
+        name: result.data.name,
+        number: result.data.number,
       });
+      setSubmitted(true);
+    } catch {
+      console.log("error");
+    }
   };
 
-  const newCanal = () => {
-    setCanal(initalState);
+  const updateCanal = () => {
+    setCanal("");
     setSubmitted(false);
   };
 
   return (
-    <div className="submit-form mt-5">
+    <div className="container mt-5">
       {submitted ? (
         <div>
           <h4>Pomyślnie zaktualizowano!</h4>
-          <button className="btn btn-success" onClick={newCanal}>
+          <button className="btn btn-success" onClick={updateCanal}>
             Wprowadz zmiany
           </button>
           <Link to={`/`} className="btn btn-primary">
@@ -64,8 +55,8 @@ const UpdateCanal = () => {
           </Link>
         </div>
       ) : (
-        <div className="d-flex justify-content-center mt-5">
-          <div className="form-group">
+        <div className="row justify-content-center">
+          <div className="col-5 col-lg-3">
             <label htmlFor="name">Kanał</label>
             <input
               type="text"
@@ -75,11 +66,12 @@ const UpdateCanal = () => {
               value={canal.name}
               onChange={handleInputChange}
               name="name"
-              placeholder="Nazwa kanału"
+              placeholder="Nowa nazwa kanału"
             />
           </div>
+          <p id="updateName"></p>
 
-          <div className="form-group">
+          <div className="col-5 col-lg-3">
             <label htmlFor="number">Ilosc</label>
             <input
               type="number"
@@ -91,10 +83,12 @@ const UpdateCanal = () => {
               name="number"
             />
           </div>
+          <p id="updateNumber"></p>
+          <p id="notFound"></p>
 
           <div className="mt-4">
             <button onClick={saveCanal} className="btn btn-success">
-              Dodaj
+              Aktualizuj
             </button>
           </div>
         </div>
