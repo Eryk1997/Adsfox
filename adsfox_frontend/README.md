@@ -5,6 +5,8 @@
 - config file http-common.js and set correct url from backend
 - paste the presented fragment: npm start
 
+
+# Example views
 <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_frontend/src/images/home.png">
 <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_frontend/src/images/update.png">
 <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_frontend/src/images/updateResult.png">
