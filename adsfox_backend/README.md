@@ -18,13 +18,13 @@
 
 # 4. How to run server
 * open a new terminal window
-* paste the presented fragment: php artisan serve
+* paste the presented fragment: php artisan serve 
 <img width="300" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/serve.png">
 
 # 5. Api info
 * List of canals:
-  * GET http://127.0.0.1:8000/canals
-  * <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/getAll.png">
+  * GET http://127.0.0.1:8000/canals\
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/getAll.png">
 * A single canal:
   * GET http://127.0.0.1:8000/canals/1
   <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/getId.png">
