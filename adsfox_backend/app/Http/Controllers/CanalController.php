@@ -117,7 +117,7 @@ class CanalController extends Controller
 
         foreach ($canals as $canal) {
             $newCanalsInfo[] = [
-                'id' => $canal->id,
+                'name' => $canal->id,
                 'value' => round(($canal->number / $sumOfAllChannels) * 100, 2)
             ];
         }
