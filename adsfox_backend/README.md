@@ -8,7 +8,7 @@
 # 2. How to migrate
 * open a new terminal window
 * paste the presented fragment: php artisan migrate
-<img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/migrate.png">
+<img width="600" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/migrate.png">
 
 
 # 3. How to add 3 elements to database
@@ -26,26 +26,26 @@
   * GET http://127.0.0.1:8000/canals\
   <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/getAll.png">
 * A single canal:
-  * GET http://127.0.0.1:8000/canals/1
-  <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/getId.png">
+  * GET http://127.0.0.1:8000/canals/1\
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/getId.png">
 * Create new canal:
-  * POST http://127.0.0.1:8000/canals
-  <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/createCorrect.png">
-  <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/createError.png">
+  * POST http://127.0.0.1:8000/canals\
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/createCorrect.png">
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/createError.png">
 * Delete post by id:
-  * DELETE http://127.0.0.1:8000/canals/1
-  <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/deleteCorrect.png">
-  <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/deleteError.png">
+  * DELETE http://127.0.0.1:8000/canals/1\
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/deleteCorrect.png">
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/deleteError.png">
 * Update canal:
-  * PUT http://127.0.0.1:8000/canals/1
-  <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/updateCorrect.png">
+  * PUT http://127.0.0.1:8000/canals/1\
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/updateCorrect.png">
 * List info about percent all canals
-  * GET http://127.0.0.1:8000/canals/percentages
-    <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/percentages.png">
+  * GET http://127.0.0.1:8000/canals/percentages\
+    <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/percentages.png">
 
 
 # 6. Run Unit Tests
 * open a new terminal window
-* paste the presented fragment: ./vendor/bin/phpunit
-  <img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/unitTest.png">
+* paste the presented fragment: ./vendor/bin/phpunit\
+  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/unitTest.png">
 
