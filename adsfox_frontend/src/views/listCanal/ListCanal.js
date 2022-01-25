@@ -66,7 +66,7 @@ const ListCanal = () => {
             ))}
         </div>
       ) : (
-        <h1>Nie ma</h1>
+        <h1 className="mt-5">Lista kanałów jest pusta</h1>
       )}
     </div>
   );
