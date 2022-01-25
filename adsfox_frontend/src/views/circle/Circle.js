@@ -1,32 +1,15 @@
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell } from "recharts";
 import RenderCustomizedLabel from "./RenderCustomizedLabel";
 
-import { useContext, useEffect } from "react";
-
-import CanalService from "../../services/CanalService";
+import { useContext } from "react";
 
 import { GlobalContext } from "../../context/GlobalState";
+import { Colors } from "./RandomColor";
 
 const Circle = () => {
-  const { canals,state, dispatch, setPercentages } = useContext(GlobalContext);
+  const { state } = useContext(GlobalContext);
 
-  // useEffect(async () => {
-  //   retrivePercentage();
-  // }, []);
-
-  // const retrivePercentage = async () => {
-  //   const result = await CanalService.getPercentages();
-  //   setPercentages(result);
-  // };
-
-  // const data = [
-  //     { name: "Group A", value: 450 },
-  //     { name: "Group B", value: 300 },
-  //     { name: "Group C", value: 300 },
-  //     { name: "Group D", value: 200 },
-  //   ];
-
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+  const COLORS = Colors;
 
   return (
     <PieChart width={400} height={400}>
@@ -46,8 +29,6 @@ const Circle = () => {
       </Pie>
     </PieChart>
   );
-
-  
 };
 
 export default Circle;
