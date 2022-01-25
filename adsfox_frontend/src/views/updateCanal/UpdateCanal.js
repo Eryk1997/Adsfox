@@ -4,7 +4,7 @@ import CanalService from "../../services/CanalService";
 import { GlobalContext } from "../../context/GlobalState";
 import { Link, useParams } from "react-router-dom";
 
-const UpdateCanal = (props) => {
+const UpdateCanal = () => {
   const { id } = useParams();
   const [canal, setCanal] = useState({});
 
@@ -12,10 +12,6 @@ const UpdateCanal = (props) => {
     const result = await CanalService.get(id);
     setCanal(result.data);
   }, []);
-  // return(<div>
-  //   Update
-  //   {console.log(id)}
-  // </div>)
 
   const initalState = {
     name: "",

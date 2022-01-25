@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CanalService from "../../services/CanalService";
+import "./style.css";
 
 const AddCanal = () => {
-  const initalState = {
-    name: "",
-    number: 0,
-  };
-
-  const [canal, setCanal] = useState(initalState);
+  const [canal, setCanal] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (event) => {
@@ -16,34 +12,32 @@ const AddCanal = () => {
     setCanal({ ...canal, [name]: value });
   };
 
-  const saveCanal = () => {
+  const saveCanal = async () => {
     let data = {
       name: canal.name,
       number: canal.number,
     };
 
-    CanalService.create(data)
-      .then((response) => {
-        setCanal({
-          id: response.data.id,
-          name: response.data.name,
-          number: response.data.number,
-        });
-        setSubmitted(true);
-        console.log(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
+    try {
+      const result = await CanalService.create(data);
+      setCanal({
+        id: result.data.id,
+        name: result.data.name,
+        number: result.data.number,
       });
+      setSubmitted(true);
+    } catch {
+      console.log("error");
+    }
   };
 
   const newCanal = () => {
-    setCanal(initalState);
+    setCanal("");
     setSubmitted(false);
   };
 
   return (
-    <div className="submit-form mt-5">
+    <div className="container mt-5">
       {submitted ? (
         <div>
           <h4>Pomyślnie dodano!</h4>
@@ -55,8 +49,8 @@ const AddCanal = () => {
           </Link>
         </div>
       ) : (
-        <div className="d-flex justify-content-center mt-5">
-          <div className="form-group">
+        <div className="row justify-content-center">
+          <div className="col-5 col-lg-3">
             <label htmlFor="name">Kanał</label>
             <input
               type="text"
@@ -69,8 +63,9 @@ const AddCanal = () => {
               placeholder="Nazwa kanału"
             />
           </div>
+          <p id="addName"></p>
 
-          <div className="form-group">
+          <div className="col-5 col-lg-3">
             <label htmlFor="number">Ilosc</label>
             <input
               type="number"
@@ -82,6 +77,7 @@ const AddCanal = () => {
               name="number"
             />
           </div>
+          <p id="addNumber"></p>
 
           <div className="mt-4">
             <button onClick={saveCanal} className="btn btn-success">

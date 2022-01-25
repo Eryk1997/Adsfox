@@ -33,7 +33,7 @@ const ListCanal = () => {
     <div>
       {canals.length > 0 ? (
         <div className="container mt-5">
-          <div className="row justify-content-md-center">
+          <div className="row justify-content-center">
             <div className="col-4 grid">
               <b>Kanał</b>
             </div>
@@ -47,7 +47,7 @@ const ListCanal = () => {
           </div>
           {state.canals &&
             state.canals.map((canal) => (
-              <div className="row justify-content-md-center">
+              <div className="row justify-content-center">
                 <div className="col-4 grid">{canal.name}</div>
                 <div className="col-2 grid">{canal.number}</div>
                 <Link

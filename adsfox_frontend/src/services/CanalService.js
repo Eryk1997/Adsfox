@@ -1,11 +1,17 @@
 import http from "../http-common";
+import Validations from "../validations.js/Valudations";
 
 const getAll = async () => {
   return await http.get("/canals");
 };
 
 const create = async (data) => {
-  return await http.post("/canals", data);
+  try {
+    return await http.post("/canals", data);
+  } catch (e) {
+    Validations(e.response.data.errors.name, "addName");
+    Validations(e.response.data.errors.number, "addNumber");
+  }
 };
 
 const get = async (id) => {
