@@ -4,4 +4,4 @@
 * config file http-common.js and set correct url from backend
 * paste the presented fragment: npm start 
 
-![alt text](https://github.com/[Eryk1997]/[Adsfox]/adsfox_frontend/src/images/[master]/home.jpg?raw=true)
+![alt text](https://github.com/[Eryk1997]/[Adsfox]/adsfox_frontend/src/images/[master]/home.png?raw=true)
