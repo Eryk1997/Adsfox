@@ -5,3 +5,4 @@
 * paste the presented fragment: npm start 
 
 ![alt text](https://github.com/[Eryk1997]/[Adsfox]/adsfox_frontend/src/images/[master]/home.png?raw=true)
+<img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_frontend/src/images/home.png">
