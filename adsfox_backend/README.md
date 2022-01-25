@@ -1,5 +1,7 @@
 # 1. How to config database MySql
 * create a database named: adsfox_db
+<img width="964" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_frontend/src/images/validations.png">
+
 * set DB_USERNAME and DB_PASSWORD in .env for access to your database
 
 # 2. How to migrate
