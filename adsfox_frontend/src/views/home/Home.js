@@ -1,13 +1,15 @@
-import Circle from "../circle/Circle"
-import ListCanal from "../listCanal/ListCanal"
+import Circle from "../circle/Circle";
+import ListCanal from "../listCanal/ListCanal";
 
 const Home = () => {
-    return (
-        <div>
-            <ListCanal/>
-            <Circle />
-        </div>
-    )
-}
+  return (
+    <div>
+      <ListCanal />
+      <div className="d-flex justify-content-center">
+        <Circle />
+      </div>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
