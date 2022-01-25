@@ -2,13 +2,13 @@
 * create a database named: adsfox_db
 <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/createDataBase.png">
 * set DB_USERNAME and DB_PASSWORD in .env for access to your database
-<img width="300" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/config.png">
+<img width="500" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/config.png">
 
 
 # 2. How to migrate
 * open a new terminal window
 * paste the presented fragment: php artisan migrate
-<img width="600" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/migrate.png">
+<img width="300" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/migrate.png">
 
 
 # 3. How to add 3 elements to database
@@ -47,5 +47,5 @@
 # 6. Run Unit Tests
 * open a new terminal window
 * paste the presented fragment: ./vendor/bin/phpunit\
-  <img width="400" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/unitTest.png">
+  <img width="600" alt="jarray reverse exampl" src="https://github.com/Eryk1997/Adsfox/blob/main/adsfox_backend/images/unitTest.png">
 
